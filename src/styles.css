@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+a{
+    font-style:none;
+    color:#666666;
+    font-size: 13pt;
+}
+
+.titulo{
+    position: relative;
+    margin-bottom: 5%;
+}
+
+.img{
+    width:50%;
+    height:30%;
+}
+
+.borda{
+    border:solid 0.5px;
+    border-radius:20px;
+    border-color: #444444;
+}
+
+.footer{
+    position: absolute;
+    border-top:0.5px solid #444444; 
+    left: 0%;
+    height: 20%;
+    width: 100%;
+    
+}
+.pos-footer{
+    position: relative;
+    bottom: 0%;
+    left: 0px;
+    background-color: #959393;
+}
+
+.texto{
+    width:80%;
+    text-align: justify;
+    margin-left: 10%;
+}
+
+.facebook-icon{
+    display: block; 
+    text-indent: -999999px;
+    background-image: url('../../loja/src/app/icones/facebook.png');
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px; 
+    margin-left: 50px;
+}
+
+.instagram-icon{
+    display: block;
+    text-indent: -999999px;
+    background-image: url('../../loja/src/app/icones/instagram.png');
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    margin-left: 5px;
+}
+
+.linkedIn-icon{
+    display: block;
+    text-indent: -999999px;
+    background-image: url('../../loja/src/app/icones/linkedIn.png');
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+    margin-left: 5px;
+}
+
+.input-cartao{
+
+}
+/* .pos-icons{
+    margin: 0px 0px 0px 0px;
+    margin-right: 4px;
+    width: 5%;
+} */

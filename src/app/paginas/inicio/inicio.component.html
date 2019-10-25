@@ -1,0 +1,329 @@
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <title>T-Shop</title>
+</head>
+<body>
+    <ul class="nav nav-tabs" >
+        <li class="nav-item" (click)="abreMenu(1)">
+            <a class="nav-link" [class.active]="menu == 1" data-toggle="tab" href="#Inicio">
+                <b>Inicio</b>
+            </a>
+        </li>
+        <li class="nav-item" (click)="abreMenu(2)">
+            <a class="nav-link" [class.active]="menu == 2" data-toggle="tab" href="#Carrinho">
+                <b>Carrinho</b>
+            </a>
+        </li>
+        <li class="nav-item" *ngIf="buscou == true" (click)="abreMenu(3)">
+            <a class="nav-link" [class.active]="menu == 3" data-toggle="tab" href="#Buscar">
+                <b>Buscar</b>
+            </a>
+        </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane container" [class.active]="menu == 1" *ngIf="menu == 1">
+            <div class="pos-barraPesquisa">
+                <div class="pos-titulo estilo-titulo" >T-Shop</div><br/><br/>
+                <div class="row">
+                    <input class="barraPesquisa" id="pesquisaInput"  type="image" style="text-align:center" type="text" placeholder="Pesquisar" [(ngModel)]="pesquisa">
+                    <button (click)="pesquisar()" class="btn-buscar"></button>
+                </div>
+            </div>
+            <br/>
+            <h5>Destaque</h5>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item" [class.active]="posicao == 1">
+                        <div class="produto">
+                            <div class="row">
+                                <div class="pos-img imgLargura">
+                                    <img width="180" height="200" class="d-block w-100" src="{{produto.url}}">
+                                </div>
+                                <div class="descricao">
+                                    <h4>{{produto.nome}}</h4>
+                                    <h5><b>R$</b> {{produto.valor}}</h5>
+                                    <h6>{{produto.descricao}}</h6>
+                                    <button type="button" class="btn btn-warning" (click)="addCarrinho(produto.idP)"><b>Adicionar ao Carrinho</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item" [class.active]="posicao == 2">
+                        <div class="produto">
+                            <div class="row">
+                                <div class="pos-img imgLargura">
+                                    <img width="180" height="200" class="d-block w-100" src="{{produtoA.url}}">
+                                </div>
+                                <div class="descricao">
+                                    <h4>{{produtoA.nome}}</h4>
+                                    <h5><b>R$</b> {{produtoA.valor}}</h5>
+                                    <h6>{{produtoA.descricao}}</h6>
+                                    <br/>
+                                    <button type="button" class="btn btn-warning" (click)="addCarrinho(produtoA.idP)" ><b>Adicionar ao Carrinho</b></button>
+                                </div>
+                                <br/>
+                                <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item" [class.active]="posicao == 3">
+                        <div class="produto">
+                            <div class="row">
+                                <div class="pos-img" class="imgLargura" >
+                                    <img width="180" height="200" class="d-block w-100" src="{{produtoB.url}}">
+                                </div>
+                                <div class="descricao">
+                                    <h4>{{produtoB.nome}}</h4>
+                                    <h5><b>R$</b> {{produtoB.valor}}</h5>
+                                    <h6>{{produtoB.descricao}}</h6>
+                                    <br/>
+                                    <button type="button" class="btn btn-warning" (click)="addCarrinho(produtoB.idP)"><b>Adicionar ao Carrinho</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <h3>Mais Produtos</h3>
+            <br/>
+            <div *ngFor = "let p of produtos" class="produtos">
+                <div class="produto">
+                    <div class="row">
+                        <div class="pos-img" class="imgLargura">
+                            <img width="180" height="200" class="d-block w-100" src="{{p.url}}">
+                        </div>
+                        <div class="pos-descricao">
+                            <h4>{{p.nome}}</h4>
+                            <h5><b>R$</b> {{p.valor}}</h5>
+                            <h6>{{p.descricao}}</h6>
+                            <button type="button" class="btn btn-warning" (click)="addCarrinho(p.idP)"><b>Adicionar ao Carrinho</b></button>
+                        </div>
+                    </div>
+                <br/>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+            <div class="pos-footer">
+                <div class="footer">
+                    <div class="texto">
+                        <h6><b>Os produtos são para ilustrar um modelo de loja virtual, para comprar os produtos é preciso acessar os sites:<br/></b></h6>
+                        <a href="https://www.magazineluiza.com.br/" target="blank">Magazine Luiza</a>, ou <a href="https://www.casasbahia.com.br/" target="blank">Casas Bahia </a>
+                    </div>
+                    <div class="row">
+                        <a class="facebook-icon" href="https://pt-br.facebook.com/" target="blank">facebook</a>
+                        <a class="instagram-icon" href="https://www.instagram.com/" target="blank">instagram</a>
+                        <a class="linkedIn-icon" href="https://br.linkedin.com/" target="blank">linkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pos-msg" *ngIf="adicionado == true">
+                <div class="alert alert-dark" role="alert">
+                    <h6>Produto adicionado ao carrinho!</h6>
+                </div>
+            </div>
+            <div class="tamanho-prev" (click)="voltar()">
+                <a class="carousel-control-prev" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </div>
+            <div  class="tamanho-next" (click)="avancar()">
+                <a class="carousel-control-next" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div><!--*************************** Segunda aba do menu****************** -->
+        <div class="tab-pane container" [class.active]="menu == 2" *ngIf="menu == 2">
+            <div class="posTabela">
+                <div class="table-responsive-sm">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col-1">#</th>
+                                <th scope="col-xs">Produto</th>
+                                <th scope="col-xs">Valor</th>
+                                <th scope="col-xs">Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let produto of carrinho.produtos" >
+                                <th scope="row"><img class="imgPequena" height="50" width="48"  src="{{produto.url}}" class="mr-3" alt="..."></th>
+                                <td>{{produto.nome}}</td>
+                                <td>{{produto.valor}}</td>
+                                <label class="btn-Apagar" (click)="apagar(produto.idP)">s</label>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mL">
+                    <h5>Valor Total: <b class="valorFinal">{{carrinho.precoTotal}}</b></h5><br/>
+                    <h5>Quantidade de Produtos:<b>{{carrinho.qtdProduto}}</b></h5>
+                </div>
+            </div>
+                <br/>
+            <div class="mL">
+                <button *ngIf="carrinho.qtdProduto > 0 && pagamentoIniciado == false" class="btn btn-dark" (click)="iniciaPagamento()"><b>Realizar pagamento</b></button>
+            </div>
+            <br/>
+
+            <div *ngIf="pagamentoIniciado == true && carrinho.qtdProduto > 0 ">
+                <br/>
+                <br/>
+                <div class="card-header">
+                    <h5>Dados do Usuário</h5>
+                </div>
+                <form [formGroup]="formGroupComprador">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Nome</span>
+                        </div>
+                        <input id="input-form" type="text" formControlName="nome" aria-label="Primeiro nome" class="form-control">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Telefone</span>
+                        </div>
+                        <input  id="input-form" type="tel" [textMask]="{mask: telefone}" formControlName="telefone" aria-label="Telefone" class="form-control">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">E-mail</span>
+                        </div>
+                        <input  id="input-form" type="text" formControlName="email" aria-label="E-mail" class="form-control">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">CPF</span>
+                        </div>
+                        <input  id="input-form" type="tel" [textMask]="{mask: cpf}" formControlName="cpf" aria-label="CPF" class="form-control">
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="card-header">
+                        <h5>Endereço</h5>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">CEP:</span>
+                        </div>
+                        <input id="input-form" type="tel" [textMask]="{mask: cep}" formControlName="cep" aria-label="Primeiro nome" class="form-control">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Bairro</span>
+                        </div>
+                        <input  id="input-form" type="text" formControlName="bairro" aria-label="Bairro" class="form-control">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Rua</span>
+                        </div>
+                        <input  id="input-form" type="text" formControlName="rua" aria-label="Rua" class="form-control">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Número</span>
+                        </div>
+                        <input  id="input-form" type="tel" formControlName="numero" aria-label="Número" class="form-control">
+                    </div>
+                </form>
+                <div class="pos-cartoes">
+                    <form [formGroup]="formGroupPagamento">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Formas de Pagamento</label>
+                            </div>
+                        </div>    
+                        <select class="tam-select" formControlName="tipoPagamento" class="custom-select" id="inputGroupSelect01">
+                            <option selected>Escolha...</option>
+                            <option value="cartao">Cartão</option>
+                            <option value="boleto">Boleto</option>
+                        </select>
+                        <div class="row">
+                            <div *ngIf="formGroupPagamento.value.tipoPagamento == 'cartao'">
+                                <div class="cartao">
+                                    <div class="pos-input-num-cartao">
+                                        <input type="tel" placeholder="0000 0000 0000 0000" [textMask]="{mask: numCartao}" class="input-cartao">
+                                    </div>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="pos-input-data-cartao">
+                                            <input type="tel" placeholder="mm/aa" [textMask]="{mask: diaMes}" class="input-cartao input-data-cartao">
+                                        </div>
+                                        <div class="pos-input-nome-cartao">
+                                            <input type="text" placeholder="Nome no cartão" class="input-cartao input-nome-cartao">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div *ngIf="formGroupPagamento.value.tipoPagamento == 'cartao'">
+                                <div class="cartao">
+                                    <div class="faixa-cartao">
+                                    </div>
+                                    <div class="pos-input-num-cartao">
+                                        <input type="tel" placeholder="CVC" [textMask]="{mask: CVC}" class="input-numSeg-cartao input-cartao">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>    
+                </div>
+                <br/>
+                <br/>
+                <button class="btn btn-success" (click)="finalizarCompra()" [disabled]="!formGroupComprador.valid">Finalizar Compra!</button>
+                <br/>
+                <br/>
+            </div>
+            <div class="pos-msg" *ngIf="pagamentoFinalizado == true">
+                <div class="alert alert-success" role="alert">
+                    Parabéns, pagamento concluído !!!
+                </div>
+            </div>
+        </div><!--*************************** Terceira aba do menu****************** -->
+        <div class="tab-pane container" [class.active]="menu == 3" *ngIf="menu == 3 && buscou == true">
+            <div class="pos-barraPesquisa">
+                <div class="pos-titulo estilo-titulo" >T-Shop</div><br/><br/>
+                <div class="row">
+                    <input class="barraPesquisa" id="pesquisaInput" type="image" style="text-align:center" type="text" placeholder="Pesquisar" [(ngModel)]="pesquisa">
+                    <button class="btn-buscar" (click)="pesquisar()"></button>
+                </div>
+            </div>
+            <div *ngFor="let resultado of resultados">
+                <div class="produto">
+                    <div class="row">
+                        <div class="pos-img" class="imgLargura" >
+                            <img width="180" height="200" class="d-block w-100" src="{{resultado.url}}">
+                        </div>
+                        <div class="descricao">
+                            <h4>{{resultado.nome}}</h4>
+                            <h5><b>R$</b> {{resultado.valor}}</h5>
+                            <h6>{{resultado.descricao}}</h6>
+                            <br/>
+                            <button type="button" class="btn btn-warning" (click)="addCarrinho(resultado.idP)"><b>Adicionar ao Carrinho</b></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="barraLateral-pos" (click)="abreMenu(2)" *ngIf="menu == 1 || menu == 3">
+        <label class="barraLateral"><br/><b>{{carrinho.qtdProduto}}</b></label>
+    </div>
+
+    <!-- <div class="col linhaBaixo"></div> -->
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+.pos-titulo{
+    position: absolute;
+    right: 30%;
+    margin-top: -10px;
+}
+
+.estilo-titulo{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30pt;
+    color: #555555;
+}
+
+.barraPesquisa{
+    width: 70%; 
+    height: 35px; 
+    left:5%;
+    margin-left: 10%;
+    border:none;
+    box-shadow: 1px 1px 2px 1px #999999;
+    border-radius:1px;
+    color:#444444;
+}
+.pos-barraPesquisa{
+    top:4%;
+    margin-bottom: 10%;
+    margin-top: 0%;
+    margin-left:-10%;
+    left:0%;
+    right: 10%;
+}
+.btn-buscar{
+  display: block;
+  text-indent: -9999999;
+  border:none;
+  box-shadow: 1px 1px 2px 1px #999999;
+  border-radius:1px;
+  margin-bottom: 10px;
+  height: 35px;
+  width: 32px;
+  background-image: url('../../icones/lupa.png');
+  background-repeat: no-repeat;
+  background-color: white;
+}
+
+.pos-img{
+    position: relative;
+    margin-bottom:5px;
+    top: 25%;
+    left: 20%;
+}
+
+.produto{
+    position: relative;
+    right:15px;
+    margin-right: 5px;
+    margin-left:-5%;
+}
+
+.descricao{
+    position: relative;
+    margin-left: 20%;
+    margin-right: 4px;
+    width: 100%;
+}
+.pos-descricao{
+  position: relative;
+  margin-left: 50px;
+  margin-right: 4px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after{
+  content: '>';
+  font-size: 30pt;
+  color:#555555;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 30pt;
+  color:#555555;
+}
+
+/* Ajusta os botões de direções  */
+.tamanho-prev{
+    top:40% ;
+    position: absolute;
+    height:50%;
+    left: 10%;
+}
+
+.tamanho-next{ 
+  top:40%;
+  position: absolute;
+  height:50%;
+  right: 10%;
+}
+
+.inputQtd{
+  width: 40px;
+  border-radius: 2px;
+}
+.imgPequena{
+  margin-left: 0px;
+  position: absolute;
+}
+
+.imgLargura{
+  height: 200px;
+  width: 200px;
+  left:5%;
+  margin-left: 20%;
+}
+.valorFinal{
+  color:rgb(94, 255, 0);
+}
+.mL{
+  margin-left: 5%;
+}
+
+.posTabela{
+  margin-top: 16%;
+}
+.btn-Apagar{
+  text-indent: -999999px;
+  margin-top: 5px;
+  display: block;
+  width: 27px;
+  height: 27px;
+  background-image: url("../../icones/cancelar.svg");
+  background-repeat: no-repeat;
+}
+.barraLateral{
+  width: 32px;
+  height: 32px;
+  display:block;
+  background-image: url("../../icones/carrinho2.png");
+  background-repeat: no-repeat;
+  border:none;
+  color: red;
+}
+.barraLateral-pos{
+  top:9%;
+  right: 6px;
+  position:fixed;
+  margin-right: 2%;
+}
+.pos-msg{
+  bottom:0%;
+  width: 100%;
+  position: fixed;
+}
+
+.tam-select{
+  width: 200px;
+}
+.pos-cartoes{
+  position: relative;
+  margin-top:20px;
+
+}
+.cartao{
+  width: 250px;
+  height: 150px;
+  background-color: #dad1d1;
+  border-radius: 5%;
+  margin-left: 10px;
+  margin-top:10px;
+}
+
+.input-cartao{
+  border-radius: 5%;
+  background: #dad1d1;
+  border: none;
+  border-bottom: 0.5px solid #999999;
+  color: rgb(255, 255, 255);
+  font-weight:bold;
+}
+
+.pos-input-num-cartao{
+  position: absolute;
+  margin-top:50px;
+  margin-left:4px;
+}
+
+.input-data-cartao{
+
+  width: 60px;
+  margin-top:80px;
+  margin-left:18px;
+}
+.input-nome-cartao{
+  width: 150px;
+  margin-top:80px;
+  margin-left:4px;
+}
+.input-numSeg-cartao{
+  width: 60px;
+  margin-left:10px
+}
+.faixa-cartao{
+  width: 100%;
+  height: 30px;
+  background: #777777;
+}
+
+.icon-lupa{
+  display: block;
+  text-indent: -999999px;
+  background-image: url('../../icones/lupa.png');
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+
+
+
+
+/* footer{
+
+  position:relative;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  margin-top: 4%;
+  margin-bottom: 0%;
+  bottom:0%;
+  left: 0%;
+  height:5%;
+  width: 100%;
+} */
+
+/* .linhaBaixo{
+  border-top: 0.1px solid;
+  border-color: #555555;
+} */
