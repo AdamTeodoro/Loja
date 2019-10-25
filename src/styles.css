@@ -73,9 +73,15 @@ a{
     height: 48px;
     margin-left: 5px;
 }
-
-.input-cartao{
-
+.github-icon{
+    position: relative;
+    display: block;
+    text-indent: -999999px;
+    background-image: url('../../loja/src/app/icones/github.png');
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 48px;
+    margin-left: -10px;
 }
 /* .pos-icons{
     margin: 0px 0px 0px 0px;

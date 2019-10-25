@@ -124,6 +124,7 @@
                         <a class="facebook-icon" href="https://pt-br.facebook.com/" target="blank">facebook</a>
                         <a class="instagram-icon" href="https://www.instagram.com/" target="blank">instagram</a>
                         <a class="linkedIn-icon" href="https://br.linkedin.com/" target="blank">linkedIn</a>
+                        <a class="github-icon" href="https://github.com/AdamTeodoro/loja" target="blank">github</a>
                     </div>
                 </div>
             </div>
@@ -314,6 +315,25 @@
                             <br/>
                             <button type="button" class="btn btn-warning" (click)="addCarrinho(resultado.idP)"><b>Adicionar ao Carrinho</b></button>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="buscou == true && resultados.length == 0">
+                <h5>Nenhum produto encontrado!</h5>
+            </div>
+            <br/>
+            <br/>
+            <div class="pos-footer">
+                <div class="footer">
+                    <div class="texto">
+                        <h6><b>Os produtos são para ilustrar um modelo de loja virtual, para comprar os produtos é preciso acessar os sites:<br/></b></h6>
+                        <a href="https://www.magazineluiza.com.br/" target="blank">Magazine Luiza</a>, ou <a href="https://www.casasbahia.com.br/" target="blank">Casas Bahia </a>
+                    </div>
+                    <div class="row">
+                        <a class="facebook-icon" href="https://pt-br.facebook.com/" target="blank">facebook</a>
+                        <a class="instagram-icon" href="https://www.instagram.com/" target="blank">instagram</a>
+                        <a class="linkedIn-icon" href="https://br.linkedin.com/" target="blank">linkedIn</a>
+                        <a class="github-icon" href="https://github.com/AdamTeodoro/loja" target="blank">github</a>
                     </div>
                 </div>
             </div>
